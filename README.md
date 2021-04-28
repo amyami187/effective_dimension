@@ -11,8 +11,8 @@ This project requires Python version 3.7 and above, as well as Qiskit v0.23.0 an
 `$ python -m pip install torch==1.3.1`
 
 ##
-### Effective_dimension_code
-This folder contains the main framework for most calculations used in this research article. In order to calculate the effective dimension,
+### Effective dimension code
+The effective_dimension folder contains the main framework for most calculations used in this research article. In order to calculate the effective dimension,
 we create an abstract base class called `Model`, which can be either quantum or classical. We then have two classes for either regime,
 the quantum models (`QuantumNeuralNetwork`) and classical models (`ClassicalNeuralNetwork`). And finally, we have an effective dimension class (`EffectiveDimension`)
 to compute the effective dimension of any model class. 
