@@ -4,7 +4,7 @@ In this repository, there are several folders containing data and code to reprod
 the manuscript titled "The power of quantum neural networks". All code was generated using Python v3.7, 
 PyTorch v1.3.1 and Qiskit v0.23.0 which can be pip installed. The hardware experiment was conducted on IBM's Montreal 27-qubit device. Below is an explanation of each folder's contents and installation.
 
-##Installation 
+## Installation 
 This project requires Python version 3.7 and above, as well as Qiskit v0.23.0 and PyTorch v1.3.1. Installation of these packages and all dependencies, can be done using pip:
 
 `$ python -m pip install qiskit==0.23.0` \
