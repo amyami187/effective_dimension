@@ -57,11 +57,6 @@ to calculate the Fisher information (100 times for each parameter set) and plot 
 distribution of eigenvalues for models of increasing input size = [4, 6, 8, 10] and fixed output size = 2.
 - The classical architectures are chosen from a brute force search and specified in the script.
 
-### Fisher_rao_norm_calcs
-- To calculate the Fisher-Rao norm, we train the models and use the parameter set produced after training (saved as `opt_params`). To ensure the results are robust, we train the models multiple times and compute the average Fisher-Rao norm.
-- The raw data is stored in the data folder, with code to generate it in the generate_data folder. The average Fisher-Rao norm for each model is 
-contained in the Supplementary Information in Table 1.
-
 ### Generalisation_plots
 - In this experiment, we train a classical neural network 100 times over an increasing percentage of randomised labels. We then
 calculate the effective dimension once the model has trained to zero loss each time. We also calculate the loss on the test data.
@@ -75,6 +70,11 @@ deviation over increasing randomised labels and the performance on the test data
 times in order to gain a standard deviation over different random parameter initialisations.
 - The code for the hardware experiment is contained in a jupyter notebook in the folder hardware. The raw data from this experiment is contained in the `loss_plot.py` file in the main Loss_plots folder. 
 We run the hardware experiment for only 33 training iterations after seeing it performs better than the simulated results. 
+
+### Fisher_rao_norm_calcs
+- To calculate the Fisher-Rao norm, we train the models and use the parameter set produced after training (saved as `opt_params`). To ensure the results are robust, we train the models multiple times and compute the average Fisher-Rao norm.
+- The raw data is stored in the data folder, with code to generate it in the generate_data folder. The average Fisher-Rao norm for each model is 
+contained in the Supplementary Information in Table 1.
 
 ### Sensitivity_plots
 - The raw data is stored in the data folder, with code to generate it in the generate_data folder. This data reproduces the sensitivity analysis in the 
