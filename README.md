@@ -11,7 +11,7 @@ This project requires Python version 3.7 and above, as well as Qiskit v0.23.0 an
 `$ python -m pip install torch==1.3.1`
 
 ##
-### Effective_dimension_code
+### Effective dimension code
 This folder contains the main framework for most calculations used in this research article. In order to calculate the effective dimension,
 we create an abstract base class called `Model`, which can be either quantum or classical. We then have two classes for either regime,
 the quantum models (`QuantumNeuralNetwork`) and classical models (`ClassicalNeuralNetwork`). And finally, we have an effective dimension class (`EffectiveDimension`)
@@ -21,11 +21,11 @@ to compute the effective dimension of any model class.
 network without biases, constructed using PyTorch. One can simply pass a list to this class which specifies the 
 architecture of the model. For example, instantiating the class as follows: `ClassicalNeuralNetwork([4, 3, 4])` will create a feedforward 
 neural network with input size = 4, 4 neurons in the first hidden layer and finally an output size of 4. The list can be arbitrarily long and thus, the 
-model can have more hidden layers, neurons etc.
+model can have more hidden layers, neurons etc. There is an example file illustrating this setup (`example_cnn.py`).
 - The quantum model is assumed to consist of a feature map, a variational form and a post processing function to extract the model's labels. 
 The feature map and variational form circuits can be passed as arguments, as well as the post processing funciton, however, the default
 post processing function has been hardcoded to compute the parity of output bitstrings as explained in more detail in the Methods section of the 
-research article.
+research article. There is an example file illustrating this setup (`example_qnn.py`).
 - To instantiate the `QuantumNeuralNetwork` class, one must first create a feature map circuit and a variational form circuit. This can be done by importing circuits from 
 Qiskit's circuit library. An example to create this is included in the folder.
 - Both `QuantumNeuralNetwork` and `ClassicalNeuralNetwork` classes have a function to compute the probabilities of obtaining a certain label (the 
