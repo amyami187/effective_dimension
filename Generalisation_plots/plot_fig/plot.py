@@ -57,5 +57,5 @@ plt.fill_between(loss, np.array(nq)+np.array(sd), np.array(nq)-np.array(sd), alp
 plt.xlim(xmin=0, xmax=0.5)
 # create shared axis labels
 fig.text(0.5, 0.01, '% of randomized labels', ha='center')
-plt.savefig('generalisation.eps', format='eps', dpi=1000)
+plt.savefig('generalisation.pdf', format='pdf', dpi=1000)
 plt.show()
