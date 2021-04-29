@@ -2,7 +2,6 @@ from effective_dimension import Model, EffectiveDimension, QuantumNeuralNetwork
 from qiskit.circuit.library import ZZFeatureMap, RealAmplitudes
 import numpy as np
 
-
 # this code generates the data for the quantum neural network model's fisher information eigenvalue distribution plot \
 # in the main figure
 

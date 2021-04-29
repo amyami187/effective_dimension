@@ -1,8 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 from scipy import interpolate
-
 
 # This code generates the distribution of eigenvalues plot in the main manuscript
 
@@ -77,11 +75,9 @@ plt.plot(x_new, y_new, color = groen)
 plt.savefig('fisher_3comp_in4_zoomed_out_only.eps', format='eps', dpi=1000)
 plt.show()
 
-
 # repeat the process for just the eigenvalues < 1
 
 ###############################################################
-
 e11 = []
 for i in range(len(e1)):
     if e1[i] < 1:
@@ -141,4 +137,3 @@ plt.plot(x_new, y_new, color=groen)
 plt.title('Quantum neural network')
 plt.savefig('fisher_3comp_in4_zoomed_in_only.eps', format='eps', dpi=1000)
 plt.show()
-

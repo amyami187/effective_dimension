@@ -27,4 +27,3 @@ class Model(ABC):
     @abstractmethod
     def get_fisher(self, *args, **kwargs):
         raise NotImplementedError()
-

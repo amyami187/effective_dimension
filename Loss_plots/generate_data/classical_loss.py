@@ -6,33 +6,7 @@ import numpy as np
 from sklearn.utils import shuffle
 from abc import ABC, abstractmethod
 
-
-# Train a classical neural network with size = [4,1,1,1,2]
-
-class Model(ABC):
-    """
-    Abstract base class for classical/quantum models.
-    """
-    def __init__(self):
-        """
-        :param thetamin: int, minimum used in uniform sampling of the parameters
-        :param thetamax: int,  minimum used in uniform sampling of the parameters
-        """
-        # Stack data together and combine parameter sets to make calcs more efficient
-        self.thetamin = 0
-        self.thetamax = 1
-
-    @abstractmethod
-    def forward(self, *args, **kwargs):
-        raise NotImplementedError()
-
-    @abstractmethod
-    def get_gradient(self, *args, **kwargs):
-        raise NotImplementedError()
-
-    @abstractmethod
-    def get_fisher(self, *args, **kwargs):
-        raise NotImplementedError()
+# Train a classical neural network 100 times with size = [4,1,1,1,2]
 
 
 class ANN(nn.Module):
@@ -53,7 +27,6 @@ class ANN(nn.Module):
 def create_rand_params(h):
     if type(h) == nn.Linear:
         h.weight.data.uniform_(0, 1)
-
 
 nnsize = [4,1,1,1,2]
 from sklearn import datasets
@@ -76,7 +49,6 @@ for j in range(100):
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=0.1)
     epochs = 100
-
     loss_arr = []
     for i in range(epochs):
         y_hat = model.forward(x_train)
@@ -92,14 +64,8 @@ for j in range(100):
         #    break
     filename = 'classical_loss_%d.npy' % j
     np.save(filename, loss_arr)
-
     PATH = "../model_20.pt"
-
     # Save
     torch.save(model, PATH)
-
     # Load
     model1 = torch.load(PATH)
-
-
-

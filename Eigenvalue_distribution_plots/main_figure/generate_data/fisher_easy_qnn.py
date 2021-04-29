@@ -5,7 +5,6 @@ import numpy as np
 # this code generates the data for the easy quantum model's fisher information eigenvalue distribution plot \
 # in the main figure
 
-
 blocks = 9
 ###################################################################################
 num_qubits = 4
@@ -16,7 +15,5 @@ circ = RealAmplitudes(num_qubits, reps=blocks)
 qnet = QuantumNeuralNetwork(var_form=circ, feature_map=fm)
 ed = EffectiveDimension(qnet, num_thetas=num_thetas, num_inputs=num_inputs)
 f, trace = ed.get_fhat()
-
 np.save("4qubits_9layer_f_hats_pauli.npy", f)
-
 ####################################################################################

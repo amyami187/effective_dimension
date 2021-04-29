@@ -1,11 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 from scipy import interpolate
 
-
 # This code generates the distribution of eigenvalues plot in the Supplementary Information
-
 
 # colors:
 rooi = np.array([255, 29, 0])/255
@@ -13,7 +10,6 @@ blou = np.array([0, 150, 236])/255
 groen = np.array([0,208,0])/255
 
 path = 'specify_path_to_data_here'
-path = '/Users/amiramahomedabbas/PycharmProjects/EffectiveDimensionReviewed/nature_com_sci/Eigenvalue_distribution_plots/appendix_figure'
 # load data
 fhat_classical = np.load(path +'/data/fhat6_[6 7 2 2].npy')
 fhat_easy_qnn = np.load(path +"/data/6qubits_9layer_f_hats_pauli_Z.npy")
@@ -197,4 +193,3 @@ plt.plot(x_new, y_new, color=groen, label='C3')
 plt.legend()
 plt.savefig('fisher_appendix_hist.eps', format='eps', dpi=1000)
 plt.show()
-

@@ -149,5 +149,3 @@ plt.title("n = 1e13")
 
 plt.savefig("sensitivity_lower_depth.pdf", format='pdf', dpi=1000)
 plt.show()
-
-

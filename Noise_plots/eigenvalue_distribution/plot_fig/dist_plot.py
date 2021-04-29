@@ -3,18 +3,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import interpolate
 
-
 # This code generates the distribution of eigenvalues for the noisy results in the Supplementary Information
-
-
 # colors:
 blou = np.array([32,26,184])/255
 groen = np.array([0,116,0])/255
-
-
 path = 'insert_path_to_data_file_here'
-
-
 # set up figure
 fig, ax = plt.subplots(nrows=4, ncols=2, sharex=True, sharey=True, figsize=(8, 14))
 
@@ -51,7 +44,6 @@ x, y = mid_points, counts/np.sum(counts)
 plt.plot(x,y, color=groen, label='A2')
 plt.legend()
 
-
 # input size = 6
 # load data
 fhat_easy_qnn = np.load(path+"/data/6qubits_fhats_noise_linearZ_full.npy")
@@ -81,7 +73,6 @@ x, y = mid_points, counts/np.sum(counts)
 plt.plot(x,y, color=groen, label='B2')
 plt.legend()
 
-
 # input size = 8
 # laod data
 fhat_easy_qnn = np.load(path+"/data/8qubits_fhats_noise_linearZ_full.npy")
@@ -110,7 +101,6 @@ plt.ylim(ymax=1)
 x, y = mid_points, counts/np.sum(counts)
 plt.plot(x,y, color=groen, label='C2')
 plt.legend()
-
 
 # input size = 10
 # load data

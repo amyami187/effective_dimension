@@ -1,4 +1,4 @@
-from effective_dimension import ClassicalNeuralNetwork, QuantumNeuralNetwork, EffectiveDimension
+from effective_dimension import QuantumNeuralNetwork, EffectiveDimension
 from qiskit.circuit.library import ZFeatureMap, RealAmplitudes
 import matplotlib.pyplot as plt
 import numpy as np

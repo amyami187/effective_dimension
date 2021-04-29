@@ -8,7 +8,6 @@ from effective_dimension import Model, EffectiveDimension, ClassicalNeuralNetwor
 # We fix the model architecture for different input sizes to the classical models that produce the highest effective \
 # dimension on average with 100 theta samples and 100 data samples.
 
-
 n = [1000, 2000, 8000, 10000, 40000, 60000, 100000, 150000, 200000, 500000, 1000000, 10000000, 10000000000, 10000000000000]
 
 size4 = [4,1,1,1,2]
@@ -64,4 +63,3 @@ for k in seeds:
         np.save("10in_1layer_f_hats_samples_%i_seed_%i.npy" %(i,k), f)
         np.save("10in_1layer_fishers_samples_%i_seed_%i.npy" %(i,k), fishers)
         np.save("10in_1layer_trace_samples_%i_seed_%i.npy" %(i,k), trace)
-

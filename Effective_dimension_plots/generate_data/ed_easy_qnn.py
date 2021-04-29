@@ -18,4 +18,3 @@ f, trace = ed.get_fhat()
 effdim = ed.eff_dim(f, n)
 np.save("4qubits_9layer_f_hats_pauli.npy", f)
 np.save("4qubits_9layer_effective_dimension_pauli.npy", effdim)
-####################################################################################

@@ -16,8 +16,8 @@ rooi = np.array([255, 29, 0])/255
 blou = np.array([0, 150, 236])/255
 groen = np.array([0,208,0])/255
 
-# get the effective dimension using the normalised fisher matrices
 
+# get the effective dimension using the normalised fisher matrices
 def eff_dim(f_hat, n):
     d = len(f_hat[0])
     effective_dim = []

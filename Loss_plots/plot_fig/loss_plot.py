@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 
 # This code produces the loss/training plot for Figure 3 b).
 
-
 path = 'insert_path_to_data_folder_here'
 
 # colors:
@@ -41,7 +40,6 @@ av = np.average(loss, axis=0)
 print(av)
 plt.plot(range(100), av, label='quantum neural network', color=groen)
 plt.fill_between(range(100), av+np.array(sd), av-np.array(sd), alpha=0.1, color=groen)
-
 
 # IBMQ Montreal raw data
 loss_ibmq_montreal = [

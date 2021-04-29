@@ -10,6 +10,4 @@ num_inputs = 100
 num_thetas = 100
 ed = EffectiveDimension(cnet, num_thetas=num_thetas, num_inputs=num_inputs)
 f, trace = ed.get_fhat()
-
 np.save("fhat4_[4 4 4 2]_fisher.npy", f)
-

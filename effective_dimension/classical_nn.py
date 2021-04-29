@@ -26,7 +26,7 @@ class ClassicalNeuralNetwork(Model, nn.Module):
 
     def forward(self, x, params):
         """
-        Computes the output of the neural network with tanh activation functions and log_softmax of last layer.
+        Computes the output of the neural network with tanh activation adam and log_softmax of last layer.
         :param x: ndarray, data inputs for the model (can be one or multiple)
         :param params: for now, random params are used, need to add functionality for using passed params
         :return: torch tensor, model output of size (len(x), output_size)
@@ -91,6 +91,3 @@ class ClassicalNeuralNetwork(Model, nn.Module):
     def _create_rand_params(self, h):
         if type(h) == nn.Linear:
             h.weight.data.uniform_(self.thetamin, self.thetamax)
-            #h.bias.data.uniform_(self.thetamin, self.thetamax)
-
-

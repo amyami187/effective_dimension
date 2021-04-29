@@ -1,7 +1,6 @@
 from effective_dimension import Model, EffectiveDimension, ClassicalNeuralNetwork
 import numpy as np
 
-
 # this code generates the data for the classical models' fisher information eigenvalue distribution plot \
 # in the Supplementary Information figure
 
@@ -25,4 +24,3 @@ cnet = ClassicalNeuralNetwork(nnsize)
 ed = EffectiveDimension(cnet, num_thetas=num_thetas, num_inputs=num_inputs)
 f, trace = ed.get_fhat()
 np.save("fhat10_[10  8  1  4  2].npy", f)
-

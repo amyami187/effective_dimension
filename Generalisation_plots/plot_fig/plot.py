@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 # This code creats the plots in the Supplementary information where we compute the effective \
 # dimension as well as the generalisation error and see how they correlate
 
-
 path ='insert_path_to_data_here'
 effdims = np.zeros((10, 5))
 losses = np.zeros((10, 5))
@@ -21,10 +20,8 @@ for i in range(10):
         losses[i, j] += l[0]
 
 effdims = effdims/880  # normalise by d = 880
-
 avs = np.average(effdims, axis=0)
 std = np.std(effdims, axis=0)
-
 avsl = np.average(losses, axis=0)
 stdl = np.std(losses, axis=0)
 

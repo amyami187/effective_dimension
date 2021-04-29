@@ -2,7 +2,6 @@ from effective_dimension import Model, EffectiveDimension, ClassicalNeuralNetwor
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 # This is an example file to create a classical model and compute its effective dimension
 
 # create ranges for the number of data, n
