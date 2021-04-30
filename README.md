@@ -1,7 +1,7 @@
 # The power of quantum neural networks 
 
 In this repository, there are several folders containing data and code to reproduce the results/figures from 
-the manuscript titled "The power of quantum neural networks". All code was generated using Python v3.7, 
+the manuscript titled "The power of quantum neural networks" (arXiv: https://arxiv.org/abs/2011.00027). All code was generated using Python v3.7, 
 PyTorch v1.3.1 and Qiskit v0.23.0 which can be pip installed. The hardware experiment was conducted on IBM's Montreal 27-qubit device. Below is an explanation of each folder's contents and installation.
 
 ## Installation 
@@ -12,7 +12,7 @@ This project requires Python version 3.7 and above, as well as Qiskit v0.23.0 an
 
 ##
 ### Effective dimension code
-This folder contains the main framework for most calculations used in this research article. In order to calculate the effective dimension,
+This folder contains the main package and framework for most calculations used in this research article. In order to calculate the effective dimension,
 we create an abstract base class called `Model`, which can be either quantum or classical. We then have two classes for either regime,
 the quantum models (`QuantumNeuralNetwork`) and classical models (`ClassicalNeuralNetwork`). And finally, we have an effective dimension class (`EffectiveDimension`)
 to compute the effective dimension of any model class. 
