@@ -25,7 +25,8 @@ Fisher matrices for the models mentioned above. The index `Znoise` files pertain
 
 
 - `plot_fig`: this folder contains a code file to load the raw data and generate the 
-average eigenvalue distribution plot under noisy conditions, for all models.
+average eigenvalue distribution plot under noisy conditions, for all models. There is also an additional code file to produce a cumulative plot of the eigenvalues to demonstrate the degeneracy in the classical and easy quantum models.
+  
   
 ### Subfolder `training`:
 
