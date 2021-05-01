@@ -39,4 +39,4 @@ matrices for all 3 model classes and their different architectures discussed abo
   
 
 - `plot_fig`: this folder contains a code file to load the raw data and generate the 
-average eigenvalue distribution plot for all models.
+average eigenvalue distribution plot for all models in a density and cumulative density plot.
