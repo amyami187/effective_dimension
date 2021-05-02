@@ -1,6 +1,6 @@
 # The power of quantum neural networks 
 
-https://zenodo.org/badge/DOI/10.5281/zenodo.4732830.svg
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4732830.svg)](https://doi.org/10.5281/zenodo.4732830)
 
 In this repository, there are several folders containing data and code to reproduce the results/figures from 
 the manuscript titled "The power of quantum neural networks" (arXiv: https://arxiv.org/abs/2011.00027 and new version to be linked soon). All code was generated using Python v3.7, 
