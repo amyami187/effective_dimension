@@ -87,3 +87,8 @@ sensitivity in lower and higher depths/dimensions.
 We introduce the effects of hardware noise on both the training of the easy quantum model and the quantum neural network, as well as 
 the eigenvalue distributions of each model. In order to generate the training and eigenvalue distribution plots, we have two folders that 
 contain the data, code to generate the data and the code to produce the plots in the Supplementary Information. Specifically, these are Figures 6 and 7.
+
+
+
+## License
+Apache 2.0 (https://github.com/amyami187/effective_dimension/blob/master/LICENSE)
