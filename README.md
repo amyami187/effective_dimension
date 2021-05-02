@@ -89,6 +89,6 @@ the eigenvalue distributions of each model. In order to generate the training an
 contain the data, code to generate the data and the code to produce the plots in the Supplementary Information. Specifically, these are Figures 6 and 7.
 
 
-
+________________________________________________________________________________________________________________________________________________________________
 ## License
 **Apache 2.0** (see https://github.com/amyami187/effective_dimension/blob/master/LICENSE)
