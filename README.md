@@ -61,7 +61,7 @@ distribution of eigenvalues for models of increasing input size = [4, 6, 8, 10] 
 - In this experiment, we train a classical neural network 100 times over an increasing percentage of randomised labels. We then
 calculate the effective dimension once the model has trained to zero loss each time. We also calculate the loss on the test data.
 - The raw data is stored in the data folder, with code to generate it in the generate_data folder. The average effective dimension with +-1 standard
-deviation over increasing randomised labels and the performance on the test data is plotted in the Supplementary Information in Figure 9. 
+deviation over increasing randomised labels and the performance on the test data is plotted in the Supplementary Information.
 
 ### Loss_plots
 - The raw data for the simulations are stored in the data folder, with code to generate it in the generate_data folder. This data reproduces the training loss for each model in Figure
@@ -78,7 +78,7 @@ contained in the Supplementary Information in Table 1.
 
 ### Sensitivity_plots
 - The raw data is stored in the data folder, with code to generate it in the generate_data folder. This data reproduces the sensitivity analysis in the 
-Supplementary Information, Figure 4.
+Supplementary Information.
 - We conduct a sensitivity analysis of the effective dimension to different numbers of 
 parameter and data samples. We use a classical neural network to illustrate this and check the 
 sensitivity in lower and higher depths/dimensions. 
@@ -86,7 +86,7 @@ sensitivity in lower and higher depths/dimensions.
 ### Noise_plots
 We introduce the effects of hardware noise on both the training of the easy quantum model and the quantum neural network, as well as 
 the eigenvalue distributions of each model. In order to generate the training and eigenvalue distribution plots, we have two folders that 
-contain the data, code to generate the data and the code to produce the plots in the Supplementary Information. Specifically, these are Figures 6 and 7.
+contain the data, code to generate the data and the code to produce the plots in the Supplementary Information.
 
 
 ________________________________________________________________________________________________________________________________________________________________
