@@ -1,9 +1,8 @@
 # Code to reproduce the noise plots in the supplementary information
 
 
-There are two plots in the supplementary information that study the effects of hardware noise (Figures 6 and 7).
-In particular, Figure 6 examines the effects on the eigenvalue distribution of the Fisher Information, whilst
-Figure 7 looks are the effects on training in the presence of hardware noise. In this folder, there are 
+There are several plots in the supplementary information that study the effects of hardware noise.
+In particular, two figures capture the effects on the eigenvalue distribution of the Fisher Information, and a third looks at the effects on training in the presence of hardware noise. In this folder, there are 
 2 subfolders pertaining to each of these analyses respectively. 
 
 ### Subfolder `eigenvalue_distribution`:
