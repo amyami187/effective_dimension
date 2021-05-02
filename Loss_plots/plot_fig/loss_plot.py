@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 
 path = 'insert_path_to_data_folder_here'
 
+stddevs =[]
+averages =[]
 # colors:
 rooi = np.array([255, 29, 0])/255
 blou = np.array([0, 150, 236])/255
@@ -20,6 +22,8 @@ sd = np.std(loss, axis=0)
 av = np.average(loss, axis=0)
 plt.plot(range(100), av, label='classical neural network', color=rooi)
 plt.fill_between(range(100), av+np.array(sd), av-np.array(sd), alpha=0.1, color=rooi)
+stddevs.append(sd)
+averages.append(av)
 
 # Load easy qnn data
 loss_eqnn_d1 = np.load(path+'data/easy_qnn/quantum_loss_easy_99.npy')
@@ -28,7 +32,8 @@ sd = np.std(loss_eqnn_d1, axis=0)
 av = np.average(loss_eqnn_d1, axis=0)
 plt.fill_between(range(100), av+np.array(sd), av-np.array(sd), alpha=0.1, color=blou)
 plt.plot(range(100), av, label='easy quantum model', color=blou)
-
+stddevs.append(sd)
+averages.append(av)
 # Load hard qnn data
 loss = np.zeros((100,100))
 for i in range(100):
@@ -37,10 +42,10 @@ for i in range(100):
 
 sd = np.std(loss, axis=0)
 av = np.average(loss, axis=0)
-print(av)
 plt.plot(range(100), av, label='quantum neural network', color=groen)
 plt.fill_between(range(100), av+np.array(sd), av-np.array(sd), alpha=0.1, color=groen)
-
+stddevs.append(sd)
+averages.append(av)
 # IBMQ Montreal raw data
 loss_ibmq_montreal = [
     0.5864, 0.5115, 0.4597, 0.4062, 0.3654, 0.3390, 0.3330, 0.3339, 0.3241, 0.3276, # 10
@@ -60,6 +65,7 @@ loss_ibmq_montreal_with_stable = [
     0.2235, 0.2235, 0.2235, 0.2235, 0.2235, 0.2235, 0.2235, 0.2235, 0.2235, 0.2235,
     0.2235, 0.2235, 0.2235, 0.2235, 0.2235, 0.2235, 0.2235, 0.2235, 0.2235, 0.2235]
 
+averages.append(loss_ibmq_montreal_with_stable)
 
 plt.plot(loss_ibmq_montreal, label='ibmq_montreal backend', color='black')
 plt.plot(loss_ibmq_montreal_with_stable, '--', color='black')
@@ -68,3 +74,7 @@ plt.xlabel('number of training iterations')
 plt.legend()
 plt.savefig('loss_with_std_dev.pdf', format='pdf', dpi=1000)
 plt.show()
+
+# save source data as text files
+np.savetxt('average_loss_values.txt', averages)
+np.savetxt('std_dev_of_loss.txt', stddevs)
