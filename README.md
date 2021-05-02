@@ -91,4 +91,4 @@ contain the data, code to generate the data and the code to produce the plots in
 
 
 ## License
-Apache 2.0 (https://github.com/amyami187/effective_dimension/blob/master/LICENSE)
+**Apache 2.0** (see https://github.com/amyami187/effective_dimension/blob/master/LICENSE)
