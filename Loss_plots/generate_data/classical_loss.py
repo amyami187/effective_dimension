@@ -29,6 +29,7 @@ def create_rand_params(h):
         h.weight.data.uniform_(0, 1)
 
 nnsize = [4,1,1,1,2]
+
 from sklearn import datasets
 iris = datasets.load_iris()
 x, Y = iris.data, iris.target
@@ -41,27 +42,49 @@ x_train, y_train = shuffle(x_train, y_train)
 x_train = torch.Tensor(x_train).double()
 y_train = torch.Tensor(y_train).long()
 
+
+class IrisDataset(torch.utils.data.Dataset):
+    def __init__(self, X, y):
+        self.X = X
+        self.y = y
+    def __len__(self):
+        return len(self.X)
+    def __getitem__(self, idx):
+        return [self.X[idx], self.y[idx]]
+    
+iris_ds = IrisDataset(x_train, y_train)
+# batch_size = 100; lrn= 0.1  # to get paper results; loss often gets stuck in a plateau at 0.69 or 0.34;
+batch_size = 1; lrn= 0.5  # only occasionally gets stuck in plateau; often reaches near 0 loss.
+
+train_dl = torch.utils.data.DataLoader(iris_ds, batch_size=batch_size, shuffle=False)
+
 for j in range(100):
     np.random.seed(j)
     torch.manual_seed(j)
     model = ANN(size=nnsize)
     model.apply(create_rand_params)
     criterion = nn.CrossEntropyLoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.1)
+    optimizer = torch.optim.Adam(model.parameters(), lr=lrn)
     epochs = 100
     loss_arr = []
     for i in range(epochs):
-        y_hat = model.forward(x_train)
-        loss = criterion(y_hat, y_train)
-        loss_ = loss
+        model.train()
+        loss_ = 0
+        for k, (x_train, y_train ) in enumerate(train_dl):
+            y_hat = model.forward(x_train)
+            loss = criterion(y_hat, y_train)
+            loss_ += loss / len(train_dl)
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            # if loss < 0.01:
+            #    break
         loss_arr.append(loss_.detach().numpy())
-        # if i % 1000 == 0:
-        print(f'Epoch: {i} Loss: {loss}')
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-        # if loss < 0.01:
-        #    break
+    
+        
+            
+    print(f'Run: {j} Loss(train): {loss_arr[-1]}')
+    
     filename = 'classical_loss_%d.npy' % j
     np.save(filename, loss_arr)
     PATH = "../model_20.pt"
