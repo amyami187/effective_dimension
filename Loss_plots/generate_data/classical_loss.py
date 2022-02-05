@@ -28,7 +28,7 @@ def create_rand_params(h):
     if type(h) == nn.Linear:
         h.weight.data.uniform_(0, 1)
 
-nnsize = [4,1,1,1,2]
+nnsize = [4,2]
 from sklearn import datasets
 iris = datasets.load_iris()
 x, Y = iris.data, iris.target
